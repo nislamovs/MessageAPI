@@ -1,6 +1,8 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:8
 
 MAINTAINER nizamiislamovs@gmail.com
+
+ARG JAR_FILE
 
 #Debugging
 ENV JAVA_TOOL_OPTIONS -agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=n
