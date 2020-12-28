@@ -9,7 +9,7 @@ ENV JAVA_TOOL_OPTIONS -agentlib:jdwp=transport=dt_socket,address=8000,server=y,s
 EXPOSE 8000
 
 VOLUME /tmp
-EXPOSE 8080
+EXPOSE 8081
 
 ARG DEPENDENCY=build/dependency
 COPY ${DEPENDENCY}/BOOT-INF/lib /app/lib

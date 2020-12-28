@@ -1,0 +1,17 @@
+
+
+
+
+
+
+
+
+
+Additional info:
+
+https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/spring-amqp
+https://github.com/suxiongwei/springboot-rabbitmq/tree/master/springboot-producer/src
+https://github.com/zaiyunduan123/springboot-seckill/blob/master/src/main/java/com/jesper/seckill/rabbitmq/MQConfig.java
+https://stackoverflow.com/questions/41880383/create-rabbitmq-queues-with-spring-boot
+https://stackoverflow.com/questions/33239347/how-to-use-queuebinding-with-rabbitlistener
+https://www.javainuse.com/messaging/rabbitmq/exchange
