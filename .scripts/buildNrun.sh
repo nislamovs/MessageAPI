@@ -18,6 +18,11 @@ cd msgProducer ;
 ./gradlew clean build docker ;
 cd - ;
 
+#Build slackConsumer microservice and its docker image
+cd slackConsumer ;
+./gradlew clean build docker ;
+cd - ;
+
 
 #Launch all docker chain
 docker-compose up ;

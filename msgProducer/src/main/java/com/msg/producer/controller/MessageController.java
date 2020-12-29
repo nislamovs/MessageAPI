@@ -28,7 +28,7 @@ public class MessageController {
     public ResponseEntity<?> pushMsgToChannel(@PathVariable(value = "messagingChannel") @NotBlank(message = "Message channel cannot be empty!") String msgChannel,
                                               @RequestBody RabbitMessageDto msgBody) {
 
-        log.info("Messaging channel: %s", msgChannel);
+        log.info("Messaging channel: " + msgChannel);
 
         switch (msgChannel.toUpperCase()) {
 
