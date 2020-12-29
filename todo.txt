@@ -1,9 +1,8 @@
 
-
-
-
-
-
+Send file(s)                                                                                                          --
+Dead letter exchange                                                                                                  --
+Using rabbitmq for response sending                                                                                   --
+RabbitMQ exception handling                                                                                           --
 
 
 

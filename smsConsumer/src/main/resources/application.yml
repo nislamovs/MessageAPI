@@ -1,0 +1,40 @@
+server:
+  port: 8084
+
+application:
+  developer: Nizami Islamovs
+  version: v 1.0.0
+  deploymentdate: 2018-09-11 21:15:29
+  support.email: nizamiislamovs@gmail.com
+  description: SMS consumer mcs
+  title: SMS consumer mcs
+
+vonage:
+  apiKey: ${VONAGE_API_KEY}
+  apiSecret: ${VONAGE_API_SECRET}
+  from: "KGB"
+  to: ${VONAGE_PHONE_NUMBER}
+
+spring:
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    publisher-returns: true
+    template:
+      mandatory: true
+      retry:
+        enabled: true
+        initial-interval: 1000
+        max-attempts: 3
+        max-interval: 10000
+        multiplier: 1.0
+    listener:
+      simple:
+        concurrency: 10
+        max-concurrency: 10
+        prefetch: 1
+        auto-startup: true
+        default-requeue-rejected: true

@@ -44,7 +44,24 @@ services:
       - "./.docker/slackConsumer/volumes/logs:/logs"
     depends_on:
       - rabbitmq
-#
+
+  sms_consumer:
+    container_name: "sms_consumer"
+    hostname: localhost
+    build:
+      context: ./smsConsumer/
+      dockerfile: Dockerfile
+    ports:
+      - "8084:8080"
+    environment:
+      VONAGE_API_KEY: ${VONAGE_API_KEY}
+      VONAGE_API_SECRET: ${VONAGE_API_SECRET}
+      VONAGE_PHONE_NUMBER: ${VONAGE_PHONE_NUMBER}
+    volumes:
+      - "./.docker/smsConsumer/volumes/logs:/logs"
+    depends_on:
+      - rabbitmq
+
 #  email_consumer:
 #    container_name: "email_consumer"
 #    hostname: localhost
@@ -57,17 +74,5 @@ services:
 #      - "./.docker/mailingConsumer/volumes/logs:/logs"
 #    depends_on:
 #      - rabbitmq
-#
-#  sms_consumer:
-#    container_name: "sms_consumer"
-#    hostname: localhost
-#    build:
-#      context: ./smsConsumer/
-#      dockerfile: Dockerfile
-#    ports:
-#      - "8084:8080"
-#    volumes:
-#      - "./.docker/smsConsumer/volumes/logs:/logs"
-#    depends_on:
-#      - rabbitmq
+
 

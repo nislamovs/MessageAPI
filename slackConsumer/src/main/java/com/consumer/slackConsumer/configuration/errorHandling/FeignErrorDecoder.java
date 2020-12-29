@@ -15,7 +15,7 @@ public class FeignErrorDecoder implements ErrorDecoder {
     public Exception decode(String methodKey, Response response) {
 
         if (    response.status() == HttpStatus.FORBIDDEN.value() || response.status() == HttpStatus.NOT_FOUND.value())
-            throw new SlackTokenAuthException("Some problem was encountered using slack toke. Check if it sis correct and try again.");
+            throw new SlackTokenAuthException("Some problem was encountered using slack token. Check if it is correct and try again.");
         return new Exception(response.reason());
     }
 }

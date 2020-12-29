@@ -23,6 +23,10 @@ cd slackConsumer ;
 ./gradlew clean build docker ;
 cd - ;
 
+#Build smsConsumer microservice and its docker image
+cd smsConsumer ;
+./gradlew clean build docker ;
+cd - ;
 
 #Launch all docker chain
 docker-compose up ;

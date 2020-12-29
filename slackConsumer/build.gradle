@@ -35,7 +35,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 
 	//Hystrix/Feign
-
 	implementation        'org.springframework.cloud:spring-cloud-starter-openfeign:3.0.0'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

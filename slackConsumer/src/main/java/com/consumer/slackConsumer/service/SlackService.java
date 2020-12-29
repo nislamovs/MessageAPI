@@ -37,7 +37,5 @@ public class SlackService {
         System.out.println(">>>>>>>>>>>>>>>>>              " + payload.getMsg());
 
         slackClient.pushSlackMsg(SlackPayload.builder().text(payload.getMsg()).build());
-
-//        return "Done!";
     }
 }
