@@ -1,6 +1,5 @@
 package com.consumer.smsConsumer.service;
 
-//import com.consumer.smsConsumer.clients.VonageClient;
 import com.consumer.smsConsumer.configuration.RabbitConfiguration;
 import com.consumer.smsConsumer.domain.dto.RabbitMessageDto;
 import com.vonage.client.VonageClient;

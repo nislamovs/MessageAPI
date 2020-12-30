@@ -62,17 +62,20 @@ services:
     depends_on:
       - rabbitmq
 
-#  email_consumer:
-#    container_name: "email_consumer"
-#    hostname: localhost
-#    build:
-#      context: ./mailingConsumer/
-#      dockerfile: Dockerfile
-#    ports:
-#      - "8083:8080"
-#    volumes:
-#      - "./.docker/mailingConsumer/volumes/logs:/logs"
-#    depends_on:
-#      - rabbitmq
+  email_consumer:
+    container_name: "email_consumer"
+    hostname: localhost
+    build:
+      context: ./mailingConsumer/
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8080"
+    environment:
+      - MAILTRAP_USERNAME=${MAILTRAP_USERNAME}
+      - MAILTRAP_PASSWORD=${MAILTRAP_PASSWORD}
+    volumes:
+      - "./.docker/mailingConsumer/volumes/logs:/logs"
+    depends_on:
+      - rabbitmq
 
 

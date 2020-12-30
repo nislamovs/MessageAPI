@@ -2,7 +2,6 @@ package com.consumer.smsConsumer.configuration;
 
 import com.vonage.client.VonageClient;
 import com.vonage.client.sms.messages.TextMessage;
-import feign.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

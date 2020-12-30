@@ -28,5 +28,10 @@ cd smsConsumer ;
 ./gradlew clean build docker ;
 cd - ;
 
+#Build emailConsumer microservice and its docker image
+cd mailingConsumer ;
+./gradlew clean build docker ;
+cd - ;
+
 #Launch all docker chain
 docker-compose up ;
