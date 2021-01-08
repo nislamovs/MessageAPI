@@ -1,9 +1,19 @@
 
+Additional topics to implement:
+
 Send file(s)                                                                                                          --
 Dead letter exchange                                                                                                  --
+Ignorance of exceptions (listeners)                                                                                   --
 Using rabbitmq for response sending                                                                                   --
 RabbitMQ exception handling                                                                                           --
-
+Error handler                                                                                                         --
+Channel acknowledge                                                                                                   --
+Consumer prefetch                                                                                                     --
+Dummy consumer, concurrency                                                                                           --
+Message types                                                                                                         --
+Handlers/ default handlers                                                                                            --
+Hash exchange                                                                                                         --
+Reply to another queue                                                                                                --
 
 
 Additional info:
