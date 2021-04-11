@@ -14,7 +14,8 @@ Message types                                                                   
 Handlers/ default handlers                                                                                            --
 Hash exchange                                                                                                         --
 Reply to another queue                                                                                                --
-
+Secure communication (SSL)                                                                                            --
+Reactive rabbitMq
 
 Additional info:
 
