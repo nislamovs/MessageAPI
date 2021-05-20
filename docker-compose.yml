@@ -9,8 +9,8 @@ services:
     build:
       context: ./rabbitmq/
       dockerfile: Dockerfile
-#    volumes:
-#      - "./.docker/rabbitmq/volumes/etc/:/etc/rabbitmq/"
+    volumes:
+      - "./.docker/rabbitmq/volumes/etc/:/etc/rabbitmq/"
 #      - "./.docker/rabbitmq/volumes/data/:/var/lib/rabbitmq/"
 #      - "./.docker/rabbitmq/volumes/logs/:/var/log/rabbitmq/"
     ports:
