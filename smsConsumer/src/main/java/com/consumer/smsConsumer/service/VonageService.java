@@ -13,7 +13,10 @@ import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.QueueBinding;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.amqp.core.Message;
+import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.stereotype.Service;
 
 import javax.validation.constraints.NotNull;
@@ -38,7 +41,8 @@ public class VonageService {
                     exchange = @Exchange(value = RabbitConfiguration.FANOUT_EXCHANGE, type = ExchangeTypes.FANOUT),
                     key = "")
     })
-    public void pushMessage(@NotNull(message = "Slack message not set!") RabbitMessageDto payload) {
+    public void pushMessage(@NotNull(message = "Email message not set!") RabbitMessageDto payload,
+                            @Header(value = "test", required = false) String header) {
 
         System.out.println(">>>>>>>>>>>>>>>>>              " + payload.getMsg());
 

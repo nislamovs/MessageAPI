@@ -3,7 +3,6 @@ package com.msg.producer.configuration;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
-import org.springframework.amqp.rabbit.annotation.QueueBinding;
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
@@ -26,6 +25,13 @@ public class RabbitConfiguration {
 
     public static final String TOPIC_EXCHANGE = "topicExchange";
     public static final String FANOUT_EXCHANGE = "fanoutExchange";
+    public static final String DELAYED_EXCHANGE = "delayedExchange";
+
+    public static final String DELAY_QUEUE_NAME = "delayed.queue";
+
+    public static final String DELAY_HEADER = "x-delay";
+    public static final String NUM_ATTEMPT_HEADER = "x-num-attempt";
+    public static final long   RETRY_BACKOFF = 5000;
 
 
     private final ConnectionFactory connectionFactory;
@@ -57,6 +63,8 @@ public class RabbitConfiguration {
         return factory;
     }
 
+
+    //Queues
     @Bean
     public Queue emailQueue() {
         return new Queue(ROUTE_EMAIL_QUEUE, true);
@@ -72,7 +80,13 @@ public class RabbitConfiguration {
         return new Queue(ROUTE_SMS_QUEUE, true);
     }
 
+    @Bean
+    public Queue delayedQueue() {
+        return new Queue(DELAY_QUEUE_NAME, true);
+    }
 
+
+    //Exchanges
     @Bean
     public TopicExchange topicExchange(){
         return new TopicExchange(TOPIC_EXCHANGE);
@@ -81,6 +95,12 @@ public class RabbitConfiguration {
     @Bean
     public FanoutExchange fanoutExchange(){
         return new FanoutExchange(FANOUT_EXCHANGE);
+    }
+
+    @Bean
+    public DirectExchange delayedExchange() {
+        return (DirectExchange) ExchangeBuilder.directExchange(DELAYED_EXCHANGE)
+                .delayed().build();
     }
 
     //TopicExchange bindings
@@ -114,5 +134,12 @@ public class RabbitConfiguration {
     @Bean
     public Binding smsFanoutBinding() {
         return BindingBuilder.bind(smsQueue()).to(fanoutExchange());
+    }
+
+    //DirectExchange bindings [Delayed]
+
+    @Bean
+    public Binding delayedSlackBinding() {
+        return BindingBuilder.bind(delayedQueue()).to(delayedExchange()).with(DELAY_QUEUE_NAME);
     }
 }

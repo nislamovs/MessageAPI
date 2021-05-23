@@ -15,22 +15,22 @@ cd .. ;
 
 #Build msgProducer microservice and its docker image
 cd msgProducer ;
-./gradlew clean build docker ;
+./gradlew clean build docker -x test;
 cd - ;
 
 #Build slackConsumer microservice and its docker image
 cd slackConsumer ;
-./gradlew clean build docker ;
+./gradlew clean build docker -x test;
 cd - ;
 
 #Build smsConsumer microservice and its docker image
 cd smsConsumer ;
-./gradlew clean build docker ;
+./gradlew clean build docker -x test;
 cd - ;
 
 #Build emailConsumer microservice and its docker image
 cd mailingConsumer ;
-./gradlew clean build docker ;
+./gradlew clean build docker -x test;
 cd - ;
 
 #Launch all docker chain

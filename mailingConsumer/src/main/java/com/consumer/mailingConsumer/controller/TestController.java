@@ -20,7 +20,7 @@ public class TestController {
     @PostMapping("/testemail")
     public ResponseEntity<?> pushMessage(@RequestBody RabbitMessageDto payload) {
 
-        emailService.pushMessage(payload);
+        emailService.pushMessage(payload, "asdassd");
         return ResponseEntity.ok("Email message sent!");
     }
 }

@@ -25,6 +25,7 @@ https://github.com/zaiyunduan123/springboot-seckill/blob/master/src/main/java/co
 https://stackoverflow.com/questions/41880383/create-rabbitmq-queues-with-spring-boot
 https://stackoverflow.com/questions/33239347/how-to-use-queuebinding-with-rabbitlistener
 https://www.javainuse.com/messaging/rabbitmq/exchange
+https://habr.com/ru/post/318118/
 
 Useful commands:
 

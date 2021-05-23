@@ -19,11 +19,17 @@ import org.springframework.context.annotation.Configuration;
 @RequiredArgsConstructor
 public class RabbitConfiguration {
 
-
+    public static final String DELAY_QUEUE_NAME = "delayed.queue";
     public static final String ROUTE_SLACK_QUEUE = "msg.slack";
 
     public static final String TOPIC_EXCHANGE = "topicExchange";
     public static final String FANOUT_EXCHANGE = "fanoutExchange";
+    public static final String DELAYED_EXCHANGE = "delayedExchange";
+
+    public static final String DELAY_HEADER = "x-delay";
+    public static final String NUM_ATTEMPT_HEADER = "x-num-attempt";
+    public static final String RETRY_BACKOFF = "5000";      //ms
+    public static final Integer RETRY_COUNT = 5;
 
 
     private final ConnectionFactory connectionFactory;

@@ -21,4 +21,4 @@ RUN rabbitmq-plugins enable --offline rabbitmq_delayed_message_exchange
 RUN rabbitmq-plugins enable --offline rabbitmq_consistent_hash_exchange
 RUN rabbitmq-plugins enable --offline rabbitmq_management
 
-ENV RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS="-rabbitmq_management load_definitions \"/etc/rabbitmq/definitions.json\""
+#ENV RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS="-rabbitmq_management load_definitions \"/etc/rabbitmq/definitions.json\""

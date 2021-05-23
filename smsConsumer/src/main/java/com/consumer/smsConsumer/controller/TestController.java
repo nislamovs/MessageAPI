@@ -20,7 +20,7 @@ public class TestController {
     @PostMapping("/testsms")
     public ResponseEntity<?> pushMessage(@RequestBody RabbitMessageDto payload) {
 
-        vonageService.pushMessage(payload);
+        vonageService.pushMessage(payload, "asdassd");
         return ResponseEntity.ok("Sms message sent!");
     }
 }
