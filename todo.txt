@@ -1,7 +1,7 @@
 
 Additional topics to implement:
 
-Send file(s)                                                                                                          --
+Send file(s) [use email attachment]                                                                                   --
 Dead letter exchange                                                                                                  --
 Ignorance of exceptions (listeners)                                                                                   --
 Using rabbitmq for response sending                                                                                   --
@@ -10,12 +10,12 @@ Error handler                                                                   
 Channel acknowledge                                                                                                   --
 Consumer prefetch                                                                                                     --
 Dummy consumer, concurrency                                                                                           --
-Message types                                                                                                         --
-Handlers/ default handlers                                                                                            --
+Message types                                                                                                         OK
+Handlers/ default handlers                                                                                            OK
 Hash exchange                                                                                                         --
 Reply to another queue                                                                                                --
 Secure communication (SSL)                                                                                            --
-Reactive rabbitMq
+Reactive rabbitMq                                                                                                     --
 
 Additional info:
 
@@ -26,6 +26,8 @@ https://stackoverflow.com/questions/41880383/create-rabbitmq-queues-with-spring-
 https://stackoverflow.com/questions/33239347/how-to-use-queuebinding-with-rabbitlistener
 https://www.javainuse.com/messaging/rabbitmq/exchange
 https://habr.com/ru/post/318118/
+
+https://www.rabbitmq.com/prometheus.html
 
 Useful commands:
 

@@ -34,10 +34,10 @@ public class RabbitConfiguration {
 
     private final ConnectionFactory connectionFactory;
 
-    @Bean
-    public AmqpAdmin amqpAdmin() {
-        return new RabbitAdmin(this.connectionFactory);
-    }
+//    @Bean
+//    public AmqpAdmin amqpAdmin() {
+//        return new RabbitAdmin(this.connectionFactory);
+//    }
 
     @Bean
     public RabbitTemplate rabbitTemplate() {

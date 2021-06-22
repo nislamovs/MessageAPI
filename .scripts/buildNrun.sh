@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+export JAVA_HOME=/usr/lib/jvm/java-15-oracle
 
 #Cleanup
 ./stop_n_remove_containers.sh ;

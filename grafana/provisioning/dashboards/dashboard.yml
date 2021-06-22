@@ -1,0 +1,8 @@
+providers:
+  - name: InfluxDB
+    folder: ''
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /etc/grafana/provisioning/dashboards
